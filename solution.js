@@ -19,5 +19,15 @@ function getLength(value) {
     }
     return 0;
 }
-console.log(getLength("typescript"));
-console.log(getLength([10, 20, 30, 40]));
+var Person = /** @class */ (function () {
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.getDetails = function () {
+        return "Name: ".concat(this.name, ", Age: ").concat(this.age);
+    };
+    return Person;
+}());
+var person1 = new Person("Mizanur Rahman", 29);
+console.log(person1.getDetails());
