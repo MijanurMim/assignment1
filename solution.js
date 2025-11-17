@@ -25,7 +25,7 @@ var Person = /** @class */ (function () {
         this.age = age;
     }
     Person.prototype.getDetails = function () {
-        return "Name: ".concat(this.name, ", Age: ").concat(this.age);
+        return "'Name: ".concat(this.name, ", Age: ").concat(this.age, "'");
     };
     return Person;
 }());
