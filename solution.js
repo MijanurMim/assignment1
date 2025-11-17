@@ -10,6 +10,14 @@ function formatValue(value) {
     }
     return value;
 }
-console.log(formatValue("hello"));
-console.log(formatValue(1));
-console.log(formatValue(false));
+function getLength(value) {
+    if (typeof value === "string") {
+        return value.length;
+    }
+    if (Array.isArray(value)) {
+        return value.length;
+    }
+    return 0;
+}
+console.log(getLength("typescript"));
+console.log(getLength([10, 20, 30, 40]));
