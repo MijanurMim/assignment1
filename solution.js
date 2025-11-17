@@ -29,5 +29,13 @@ var Person = /** @class */ (function () {
     };
     return Person;
 }());
-var person1 = new Person("Mizanur Rahman", 29);
-console.log(person1.getDetails());
+function filterByRating(items) {
+    var topRatedItems = items.filter(function (item) { return item.rating >= 4; });
+    return topRatedItems;
+}
+var books = [
+    { title: "Book A", rating: 4.5 },
+    { title: "Book B", rating: 3.2 },
+    { title: "Book C", rating: 5.0 },
+];
+console.log(filterByRating(books));
