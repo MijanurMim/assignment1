@@ -109,3 +109,20 @@ function getUniqueValues(
 
   return result;
 }
+
+function calculateTotalPrice(
+  products: {
+    name: string;
+    price: number;
+    quantity: number;
+    discount?: number;
+  }[]
+): number {
+  return products
+    .map((product) => {
+      const total = product.price * product.quantity;
+      const discount = product.discount ? (total * product.discount) / 100 : 0;
+      return total - discount;
+    })
+    .reduce((sum, value) => sum + value, 0);
+}
