@@ -48,10 +48,9 @@ function filterByRating(
   return topRatedItems;
 }
 
-const books = [
-  { title: "Book A", rating: 4.5 },
-  { title: "Book B", rating: 3.2 },
-  { title: "Book C", rating: 5.0 },
-];
-
-console.log(filterByRating(books));
+function filterActiveUsers(
+  users: { id: number; name: string; email: string; isActive: boolean }[]
+): { id: number; name: string; email: string; isActive: boolean }[] {
+  const activeUsers = users.filter((user) => user.isActive);
+  return activeUsers;
+}
