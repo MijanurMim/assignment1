@@ -54,3 +54,58 @@ function filterActiveUsers(
   const activeUsers = users.filter((user) => user.isActive);
   return activeUsers;
 }
+
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+  isAvailable: boolean;
+}
+function printBookDetails(book: Book): void {
+  console.log(
+    `Title: ${book.title}, Author: ${book.author}, Published: ${
+      book.publishedYear
+    }, Available: ${book.isAvailable ? "Yes" : "No"}`
+  );
+}
+
+function getUniqueValues(
+  array1: (string | number)[],
+  array2: (string | number)[]
+): (string | number)[] {
+  const result: (string | number)[] = [];
+
+  for (let i = 0; i < array1.length; i++) {
+    const value = array1[i];
+    let exists = false;
+
+    for (let j = 0; j < result.length; j++) {
+      if (result[j] === value) {
+        exists = true;
+        break;
+      }
+    }
+
+    if (!exists) {
+      result.push(value);
+    }
+  }
+
+  for (let i = 0; i < array2.length; i++) {
+    const value = array2[i];
+    let exists = false;
+
+    for (let j = 0; j < result.length; j++) {
+      if (result[j] === value) {
+        exists = true;
+        break;
+      }
+    }
+
+    if (!exists) {
+      result.push(value);
+    }
+  }
+
+  return result;
+}
