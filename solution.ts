@@ -102,9 +102,9 @@ function getUniqueValues(
       }
     }
 
-    if (!exists) {
-      result.push(value);
-    }
+    // if (!exists) {
+    //   result.push(value);
+    // }
   }
 
   return result;
